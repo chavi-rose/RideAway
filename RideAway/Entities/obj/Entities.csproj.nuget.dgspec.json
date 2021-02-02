@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayDl\\RideAwayDl.csproj": {}
+    "C:\\Users\\Owner\\source\\repos\\RideAway\\RideAway\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayDl\\RideAwayDl.csproj": {
+    "C:\\Users\\Owner\\source\\repos\\RideAway\\RideAway\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayDl\\RideAwayDl.csproj",
-        "projectName": "RideAwayDl",
-        "projectPath": "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayDl\\RideAwayDl.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\source\\repos\\RideAway\\RideAway\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\Owner\\source\\repos\\RideAway\\RideAway\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayDl\\obj\\",
+        "outputPath": "C:\\Users\\Owner\\source\\repos\\RideAway\\RideAway\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",

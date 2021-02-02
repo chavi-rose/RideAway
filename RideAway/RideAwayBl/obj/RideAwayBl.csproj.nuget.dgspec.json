@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1\\Desktop\\BusTop\\RideAway\\RideAwayBl\\RideAwayBl.csproj": {}
+    "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayBl\\RideAwayBl.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1\\Desktop\\BusTop\\RideAway\\RideAwayBl\\RideAwayBl.csproj": {
+    "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayBl\\RideAwayBl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1\\Desktop\\BusTop\\RideAway\\RideAwayBl\\RideAwayBl.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayBl\\RideAwayBl.csproj",
         "projectName": "RideAwayBl",
-        "projectPath": "C:\\Users\\1\\Desktop\\BusTop\\RideAway\\RideAwayBl\\RideAwayBl.csproj",
-        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1\\Desktop\\BusTop\\RideAway\\RideAwayBl\\obj\\",
+        "projectPath": "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayBl\\RideAwayBl.csproj",
+        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Owner\\Source\\Repos\\RideAway\\RideAway\\RideAwayBl\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

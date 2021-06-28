@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace RideAway.Models
 {
@@ -17,26 +19,28 @@ namespace RideAway.Models
         {
         }
 
-        public virtual DbSet<Agency> Agencies { get; set; }
-        public virtual DbSet<Passenger> Passengers { get; set; }
-        public virtual DbSet<ReasonOfDelay> ReasonOfDelays { get; set; }
-        public virtual DbSet<Route> Routes { get; set; }
-        public virtual DbSet<Stop> Stops { get; set; }
-        public virtual DbSet<StopTime> StopTimes { get; set; }
+        public virtual DbSet<Agency> Agency { get; set; }
+        public virtual DbSet<Calendar> Calendar { get; set; }
+        public virtual DbSet<Comments> Comments { get; set; }
+        public virtual DbSet<Passenger> Passenger { get; set; }
+        public virtual DbSet<ReasonOfDelay> ReasonOfDelay { get; set; }
+        public virtual DbSet<Routes> Routes { get; set; }
+        public virtual DbSet<StopTimes> StopTimes { get; set; }
+        public virtual DbSet<Stops> Stops { get; set; }
+        public virtual DbSet<Trips> Trips { get; set; }
+        public virtual DbSet<Trips1> Trips1 { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-1I5EU6P;Database=RideAway;Trusted_Connection=True;");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-IQUC79O;Database=RideAway;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Hebrew_CI_AS");
-
             modelBuilder.Entity<Agency>(entity =>
             {
                 entity.HasNoKey();
@@ -44,34 +48,87 @@ namespace RideAway.Models
                 entity.ToTable("agency");
 
                 entity.Property(e => e.AgencyFareUrl)
-                    .HasMaxLength(1)
-                    .HasColumnName("agency_fare_url");
+                    .HasColumnName("agency_fare_url")
+                    .HasMaxLength(1);
 
                 entity.Property(e => e.AgencyId).HasColumnName("agency_id");
 
                 entity.Property(e => e.AgencyLang)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("agency_lang");
+                    .HasColumnName("agency_lang")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.AgencyName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("agency_name");
+                    .HasColumnName("agency_name")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.AgencyPhone)
-                    .HasMaxLength(1)
-                    .HasColumnName("agency_phone");
+                    .HasColumnName("agency_phone")
+                    .HasMaxLength(1);
 
                 entity.Property(e => e.AgencyTimezone)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("agency_timezone");
+                    .HasColumnName("agency_timezone")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.AgencyUrl)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("agency_url");
+                    .HasColumnName("agency_url")
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Calendar>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("calendar");
+
+                entity.Property(e => e.EndDate).HasColumnName("end_date");
+
+                entity.Property(e => e.Friday).HasColumnName("friday");
+
+                entity.Property(e => e.Monday).HasColumnName("monday");
+
+                entity.Property(e => e.Saturday).HasColumnName("saturday");
+
+                entity.Property(e => e.ServiceId).HasColumnName("service_id");
+
+                entity.Property(e => e.StartDate).HasColumnName("start_date");
+
+                entity.Property(e => e.Sunday).HasColumnName("sunday");
+
+                entity.Property(e => e.Thursday).HasColumnName("thursday");
+
+                entity.Property(e => e.Tuesday).HasColumnName("tuesday");
+
+                entity.Property(e => e.Wednesday).HasColumnName("wednesday");
+            });
+
+            modelBuilder.Entity<Comments>(entity =>
+            {
+                entity.ToTable("comments");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasColumnName("description")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FromStopId).HasColumnName("from_stop_id");
+
+                entity.Property(e => e.FromTime)
+                    .HasColumnName("from_time")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
+                entity.Property(e => e.ToStopId).HasColumnName("to_stop_id");
+
+                entity.Property(e => e.ToTime)
+                    .HasColumnName("to_time")
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Passenger>(entity =>
@@ -87,16 +144,16 @@ namespace RideAway.Models
                 entity.Property(e => e.IdentityNumber).HasColumnName("identity_number");
 
                 entity.Property(e => e.RavKavId)
-                    .IsUnicode(false)
-                    .HasColumnName("rav_kav_id");
+                    .HasColumnName("rav_kav_id")
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ReasonOfDelayId).HasColumnName("reason_of_delay_id");
 
                 entity.Property(e => e.SourceStationId).HasColumnName("source_station_id");
 
                 entity.Property(e => e.ValidationDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("validation_date");
+                    .HasColumnName("validation_date")
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<ReasonOfDelay>(entity =>
@@ -107,14 +164,16 @@ namespace RideAway.Models
 
                 entity.Property(e => e.ReasonId).HasColumnName("reason_id");
 
+                entity.Property(e => e.IsResetWaitingTime).HasColumnName("is_reset_waiting_time");
+
                 entity.Property(e => e.ReasonDescription)
                     .IsRequired()
+                    .HasColumnName("reason_description")
                     .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("reason_description");
+                    .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Route>(entity =>
+            modelBuilder.Entity<Routes>(entity =>
             {
                 entity.HasNoKey();
 
@@ -123,63 +182,30 @@ namespace RideAway.Models
                 entity.Property(e => e.AgencyId).HasColumnName("agency_id");
 
                 entity.Property(e => e.RouteColor)
-                    .HasMaxLength(50)
-                    .HasColumnName("route_color");
+                    .HasColumnName("route_color")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.RouteDesc)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("route_desc");
+                    .HasColumnName("route_desc")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.RouteId).HasColumnName("route_id");
 
                 entity.Property(e => e.RouteLongName)
                     .IsRequired()
-                    .HasMaxLength(100)
-                    .HasColumnName("route_long_name");
+                    .HasColumnName("route_long_name")
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.RouteShortName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("route_short_name");
+                    .HasColumnName("route_short_name")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.RouteType).HasColumnName("route_type");
             });
 
-            modelBuilder.Entity<Stop>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToTable("stops");
-
-                entity.Property(e => e.LocationType).HasColumnName("location_type");
-
-                entity.Property(e => e.ParentStation)
-                    .HasMaxLength(1)
-                    .HasColumnName("parent_station");
-
-                entity.Property(e => e.StopCode).HasColumnName("stop_code");
-
-                entity.Property(e => e.StopDesc)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .HasColumnName("stop_desc");
-
-                entity.Property(e => e.StopId).HasColumnName("stop_id");
-
-                entity.Property(e => e.StopLat).HasColumnName("stop_lat");
-
-                entity.Property(e => e.StopLon).HasColumnName("stop_lon");
-
-                entity.Property(e => e.StopName)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("stop_name");
-
-                entity.Property(e => e.ZoneId).HasColumnName("zone_id");
-            });
-
-            modelBuilder.Entity<StopTime>(entity =>
+            modelBuilder.Entity<StopTimes>(entity =>
             {
                 entity.HasNoKey();
 
@@ -187,13 +213,13 @@ namespace RideAway.Models
 
                 entity.Property(e => e.ArrivalTime)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("arrival_time");
+                    .HasColumnName("arrival_time")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DepartureTime)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("departure_time");
+                    .HasColumnName("departure_time")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DropOffType).HasColumnName("drop_off_type");
 
@@ -207,8 +233,91 @@ namespace RideAway.Models
 
                 entity.Property(e => e.TripId)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("trip_id");
+                    .HasColumnName("trip_id")
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Stops>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("stops");
+
+                entity.Property(e => e.LocationType).HasColumnName("location_type");
+
+                entity.Property(e => e.ParentStation)
+                    .HasColumnName("parent_station")
+                    .HasMaxLength(1);
+
+                entity.Property(e => e.StopCode).HasColumnName("stop_code");
+
+                entity.Property(e => e.StopDesc)
+                    .IsRequired()
+                    .HasColumnName("stop_desc")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.StopId).HasColumnName("stop_id");
+
+                entity.Property(e => e.StopLat).HasColumnName("stop_lat");
+
+                entity.Property(e => e.StopLon).HasColumnName("stop_lon");
+
+                entity.Property(e => e.StopName)
+                    .IsRequired()
+                    .HasColumnName("stop_name")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ZoneId).HasColumnName("zone_id");
+            });
+
+            modelBuilder.Entity<Trips>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("trips");
+
+                entity.Property(e => e.DirectionId).HasColumnName("direction_id");
+
+                entity.Property(e => e.RouteId).HasColumnName("route_id");
+
+                entity.Property(e => e.ServiceId).HasColumnName("service_id");
+
+                entity.Property(e => e.ShapeId).HasColumnName("shape_id");
+
+                entity.Property(e => e.TripHeadsign)
+                    .IsRequired()
+                    .HasColumnName("trip_headsign")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TripId)
+                    .IsRequired()
+                    .HasColumnName("trip_id")
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Trips1>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("trips1");
+
+                entity.Property(e => e.DirectionId).HasColumnName("direction_id");
+
+                entity.Property(e => e.RouteId).HasColumnName("route_id");
+
+                entity.Property(e => e.ServiceId).HasColumnName("service_id");
+
+                entity.Property(e => e.ShapeId).HasColumnName("shape_id");
+
+                entity.Property(e => e.TripHeadsign)
+                    .IsRequired()
+                    .HasColumnName("trip_headsign")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TripId)
+                    .IsRequired()
+                    .HasColumnName("trip_id")
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

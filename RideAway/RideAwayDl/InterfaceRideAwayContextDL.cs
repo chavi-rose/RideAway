@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RideAwayBl
+namespace RideAwayDl
 {
-    interface InterfaceRideAwayContextDL
+   public interface InterfaceRideAwayContextDL
     {
     }
 }

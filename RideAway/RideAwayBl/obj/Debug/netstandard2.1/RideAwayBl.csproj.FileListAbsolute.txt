@@ -1,0 +1,14 @@
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\RideAwayBl.deps.json
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\RideAwayBl.dll
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\RideAwayBl.pdb
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\Entities.dll
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\RideAwayDl.dll
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\Entities.pdb
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\bin\Debug\netstandard2.1\RideAwayDl.pdb
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.csprojAssemblyReference.cache
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.AssemblyInfoInputs.cache
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.AssemblyInfo.cs
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.csproj.CoreCompileInputs.cache
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.csproj.CopyComplete
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.dll
+C:\Users\1\source\repos\new\RideAway\RideAwayBl\obj\Debug\netstandard2.1\RideAwayBl.pdb

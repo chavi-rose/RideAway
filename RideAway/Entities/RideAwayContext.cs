@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 //#nullable disable
 
-namespace RideAway.Models
+namespace Entities
 {
     public partial class RideAwayContext : DbContext
     {

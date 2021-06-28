@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 //#nullable disable
 
-namespace RideAway.Models
+namespace Entities
 {
     public partial class Agency
     {

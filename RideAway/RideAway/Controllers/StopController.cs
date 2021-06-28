@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
+using RideAwayBl;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,7 +14,12 @@ namespace RideAway.Controllers
     [ApiController]
     public class StopController : ControllerBase
     {
-        // GET: api/<ValuesController>
+        InterfaceStopBL IStopBL;
+        public StopController(InterfaceStopBL IStopBL)
+        {
+            this.IStopBL = IStopBL;
+        }
+        //GET: api/<ValuesController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -20,10 +27,10 @@ namespace RideAway.Controllers
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{stops}")]
+        public List<Stop> GetStopsList()
         {
-            return "value";
+            return IStopBL.GetStopsList();
         }
 
         // POST api/<ValuesController>

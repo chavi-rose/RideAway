@@ -1,10 +1,15 @@
+
+using Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RideAwayBl;
+using RideAwayDl;
 
 namespace RideAway
 {
@@ -21,7 +26,21 @@ namespace RideAway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            // In production, the Angular files will be served from this directory
+            services.AddMvc();
+            services.AddControllers();
+            services.AddScoped(typeof(InterfacePassengerBL), typeof(PassengerBL));
+            services.AddScoped(typeof(InterfacePassengerDL), typeof(PassengerDL));
+           // services.AddScoped(typeof(InterfaceRideAwayContextDL), typeof(RideAwayContextDL));
+            services.AddScoped(typeof(InterfaceStopBL), typeof(StopBL));
+            services.AddScoped(typeof(InterfaceStopDL), typeof(StopDL));
+            services.AddScoped(typeof(InterfaceReasonOfDelayDL), typeof(ReasonOfDelayDL));
+            services.AddScoped(typeof(InterfaceReasonOfDelayBL), typeof(ReasonOfDelayBL));
+            
+
+
+           // services.AddDbContext<RideAwayContext>(options => options.UseSqlServer(Configuration.GetConnectionString("RideAway")));þþ
+           //services.AddDbContext<RideAwayContextDL>(options => options.UseSqlServer('desktop - iquc79o.RideAway.dbo'));þþ
+           // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";

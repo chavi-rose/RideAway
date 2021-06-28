@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Entities;
+using RideAwayBl;
+
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,30 +16,39 @@ namespace RideAway.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
+        InterfacePassengerBL IPassengerBl;
+
+
+        public PassengerController(InterfacePassengerBL IPassengerBl)
+        {
+            this.IPassengerBl = IPassengerBl;
+        }
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public int Get()
         {
-            return new string[] { "value1", "value2" };
+            return IPassengerBl.numOfPassengersBL();
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{Passengers}")]
+        public List<Passenger> GetPassengers()
         {
-            return "value";
+            return IPassengerBl.GetPassengers();
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Passenger passenger)
         {
+           IPassengerBl.AddPassenger(passenger);
         }
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] string view)
         {
+           
         }
 
         // DELETE api/<ValuesController>/5

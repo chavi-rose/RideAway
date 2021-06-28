@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Entities;
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RideAwayBl
+namespace RideAwayDl
 {
-    interface InterfacePassengerDL
+   public interface InterfacePassengerDL
     {
+        void AddPassenger(Passenger passenger);
+        List<Passenger> GetPassengers();
+        int numOfPassengersDL();
     }
 }

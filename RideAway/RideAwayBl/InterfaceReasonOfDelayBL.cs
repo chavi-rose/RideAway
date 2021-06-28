@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace RideAwayBl
 {
-    interface InterfaceReasonOfDelayBL
+  public  interface InterfaceReasonOfDelayBL
     {
+        List<ReasonOfDelay> GetAll();
     }
 }

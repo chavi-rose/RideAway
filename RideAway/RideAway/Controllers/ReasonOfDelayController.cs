@@ -2,28 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
+using RideAwayBl;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace RideAway.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ReasonOfDelayController : ControllerBase
     {
-        // GET: api/<ValuesController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        InterfaceReasonOfDelayBL IReasonOfDelayBL;
+            public ReasonOfDelayController(InterfaceReasonOfDelayBL IReasonOfDelayBL)
         {
-            return new string[] { "value1", "value2" };
+            this.IReasonOfDelayBL = IReasonOfDelayBL;
         }
+        // GET: api/<ValuesController>
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public List<ReasonOfDelay> GetAll( )
         {
-            return "value";
+            return IReasonOfDelayBL.GetAll();
         }
 
         // POST api/<ValuesController>

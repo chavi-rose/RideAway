@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Entities;
+using RideAwayDl;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace RideAwayBl
 {
-    interface InterfaceStopBL
+  public  interface InterfaceStopBL
     {
+        List<Stop> GetStopsList();
     }
 }
